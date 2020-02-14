@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -29,7 +29,7 @@
 import QtQuick 2.9
 import QtGraphicalEffects 1.0
 
-import "../components" as MoneroComponents
+import "../components" as ByteRubComponents
 
 Item {
     id: item
@@ -38,10 +38,10 @@ Item {
 
     property alias placeholderText: placeholderLabel.text
     property bool placeholderCenter: false
-    property string placeholderFontFamily: MoneroComponents.Style.fontRegular.name
+    property string placeholderFontFamily: ByteRubComponents.Style.fontRegular.name
     property bool placeholderFontBold: false
     property int placeholderFontSize: 18
-    property string placeholderColor: MoneroComponents.Style.defaultFontColor
+    property string placeholderColor: ByteRubComponents.Style.defaultFontColor
     property real placeholderOpacity: 0.35
 
     property alias acceptableInput: input.acceptableInput
@@ -59,11 +59,11 @@ Item {
     property bool borderDisabled: false
     property string borderColor: {
         if(error && input.text !== ""){
-            return MoneroComponents.Style.inputBorderColorInvalid;
+            return ByteRubComponents.Style.inputBorderColorInvalid;
         } else if(input.activeFocus){
-            return MoneroComponents.Style.inputBorderColorActive;
+            return ByteRubComponents.Style.inputBorderColorActive;
         } else {
-            return MoneroComponents.Style.inputBorderColorInActive;
+            return ByteRubComponents.Style.inputBorderColorInActive;
         }
     }
 
@@ -109,15 +109,15 @@ Item {
         }
     }
 
-    MoneroComponents.TextPlain {
+    ByteRubComponents.TextPlain {
         id: inputLabel
         anchors.top: parent.top
         anchors.left: parent.left
-        font.family: MoneroComponents.Style.fontRegular.name
+        font.family: ByteRubComponents.Style.fontRegular.name
         font.pixelSize: labelFontSize
         font.bold: labelFontBold
         textFormat: Text.RichText
-        color: MoneroComponents.Style.defaultFontColor
+        color: ByteRubComponents.Style.defaultFontColor
         onLinkActivated: item.labelLinkActivated()
 
         MouseArea {
@@ -127,7 +127,7 @@ Item {
         }
     }
 
-    MoneroComponents.LabelButton {
+    ByteRubComponents.LabelButton {
         id: copyButtonId
         text: qsTr("Copy") + translationManager.emptyString
         anchors.right: parent.right
@@ -149,7 +149,7 @@ Item {
         width: parent.width
         clip: true
 
-        MoneroComponents.TextPlain {
+        ByteRubComponents.TextPlain {
             id: placeholderLabel
             visible: input.text ? false : true
             anchors.verticalCenter: parent.verticalCenter
@@ -199,7 +199,7 @@ Item {
             visible: false
         }
 
-        MoneroComponents.Input {
+        ByteRubComponents.Input {
             id: input
             anchors.fill: parent
             anchors.leftMargin: inlineIcon.visible ? 44 : 0
@@ -212,7 +212,7 @@ Item {
             bottomPadding: 10
         }
 
-        MoneroComponents.InlineButton {
+        ByteRubComponents.InlineButton {
             id: inlineButtonId
             visible: item.inlineButtonText ? true : false
             anchors.right: parent.right

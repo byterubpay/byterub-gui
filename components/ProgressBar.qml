@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -29,7 +29,7 @@
 import QtQuick 2.9
 import moneroComponents.Wallet 1.0
 
-import "../components" as MoneroComponents
+import "../components" as ByteRubComponents
 
 Rectangle {
     id: item
@@ -61,27 +61,27 @@ Rectangle {
         anchors.rightMargin: 15
         anchors.fill: parent
 
-        MoneroComponents.TextPlain {
+        ByteRubComponents.TextPlain {
             id: progressText
             anchors.top: parent.top
             anchors.topMargin: 6
-            font.family: MoneroComponents.Style.fontMedium.name
+            font.family: ByteRubComponents.Style.fontMedium.name
             font.pixelSize: 13
-            font.bold: MoneroComponents.Style.progressBarProgressTextBold
-            color: MoneroComponents.Style.defaultFontColor
+            font.bold: ByteRubComponents.Style.progressBarProgressTextBold
+            color: ByteRubComponents.Style.defaultFontColor
             text: qsTr("Synchronizing %1").arg(syncType) + translationManager.emptyString
             height: 18
         }
 
-        MoneroComponents.TextPlain {
+        ByteRubComponents.TextPlain {
             id: progressTextValue
             anchors.top: parent.top
             anchors.topMargin: 6
             anchors.right: parent.right
-            font.family: MoneroComponents.Style.fontMedium.name
+            font.family: ByteRubComponents.Style.fontMedium.name
             font.pixelSize: 13
-            font.bold: MoneroComponents.Style.progressBarProgressTextBold
-            color: MoneroComponents.Style.defaultFontColor
+            font.bold: ByteRubComponents.Style.progressBarProgressTextBold
+            color: ByteRubComponents.Style.defaultFontColor
             height:18
         }
 
@@ -93,17 +93,17 @@ Rectangle {
             anchors.topMargin: 4
             height: 8
             radius: 8
-            color: MoneroComponents.Style.progressBarBackgroundColor
+            color: ByteRubComponents.Style.progressBarBackgroundColor
 
             states: [
                 State {
                     name: "black";
-                    when: MoneroComponents.Style.blackTheme
-                    PropertyChanges { target: bar; color: MoneroComponents.Style._b_progressBarBackgroundColor}
+                    when: ByteRubComponents.Style.blackTheme
+                    PropertyChanges { target: bar; color: ByteRubComponents.Style._b_progressBarBackgroundColor}
                 }, State {
                     name: "white";
-                    when: !MoneroComponents.Style.blackTheme
-                    PropertyChanges { target: bar; color: MoneroComponents.Style._w_progressBarBackgroundColor}
+                    when: !ByteRubComponents.Style.blackTheme
+                    PropertyChanges { target: bar; color: ByteRubComponents.Style._w_progressBarBackgroundColor}
                 }
             ]
 

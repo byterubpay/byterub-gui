@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -29,24 +29,24 @@
 import QtQuick.Controls 2.0
 import QtQuick 2.9
 
-import "../components" as MoneroComponents
+import "../components" as ByteRubComponents
 
 TextField {
     id: textField
-    font.family: MoneroComponents.Style.fontRegular.name
+    font.family: ByteRubComponents.Style.fontRegular.name
     font.pixelSize: 18
     font.bold: true
     horizontalAlignment: TextInput.AlignLeft
     selectByMouse: true
-    color: MoneroComponents.Style.defaultFontColor
-    selectionColor: MoneroComponents.Style.textSelectionColor
-    selectedTextColor: MoneroComponents.Style.textSelectedColor
+    color: ByteRubComponents.Style.defaultFontColor
+    selectionColor: ByteRubComponents.Style.textSelectionColor
+    selectedTextColor: ByteRubComponents.Style.textSelectedColor
 
     background: Rectangle {
         color: "transparent"
     }
 
-    MoneroComponents.ContextMenu {
+    ByteRubComponents.ContextMenu {
         cursorShape: Qt.IBeamCursor
         onPaste: {
             textField.clear();

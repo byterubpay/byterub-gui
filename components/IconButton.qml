@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -27,13 +27,13 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.9
-import "../components" as MoneroComponents
-import "../components/effects" as MoneroEffects
+import "../components" as ByteRubComponents
+import "../components/effects" as ByteRubEffects
 
-MoneroEffects.ImageMask {
+ByteRubEffects.ImageMask {
     id: button
     z: 666
-    color: MoneroComponents.Style.defaultFontColor
+    color: ByteRubComponents.Style.defaultFontColor
     image: ""
 
     signal clicked(var mouse)

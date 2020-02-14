@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -39,15 +39,15 @@ import moneroComponents.Wallet 1.0
 import "../js/Wizard.js" as Wizard
 import "../js/Windows.js" as Windows
 import "../js/Utils.js" as Utils
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as ByteRubComponents
+import "../components/effects/" as ByteRubEffects
 import "../pages"
 
 Rectangle {
     id: wizardController
     anchors.fill: parent
 
-    signal useMoneroClicked()
+    signal useByteRubClicked()
     signal walletCreatedFromDevice(bool success)
 
     function restart() {
@@ -237,15 +237,15 @@ Rectangle {
             }
         ]
 
-        MoneroEffects.GradientBackground {
+        ByteRubEffects.GradientBackground {
             anchors.fill: parent
-            fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-            initialStartColor: MoneroComponents.Style.wizardBackgroundGradientStart
-            initialStopColor: MoneroComponents.Style.middlePanelBackgroundGradientStop
-            blackColorStart: MoneroComponents.Style._b_wizardBackgroundGradientStart
-            blackColorStop: MoneroComponents.Style._b_middlePanelBackgroundGradientStop
-            whiteColorStart: MoneroComponents.Style._w_wizardBackgroundGradientStart
-            whiteColorStop: MoneroComponents.Style._w_middlePanelBackgroundGradientStop
+            fallBackColor: ByteRubComponents.Style.middlePanelBackgroundColor
+            initialStartColor: ByteRubComponents.Style.wizardBackgroundGradientStart
+            initialStopColor: ByteRubComponents.Style.middlePanelBackgroundGradientStop
+            blackColorStart: ByteRubComponents.Style._b_wizardBackgroundGradientStart
+            blackColorStop: ByteRubComponents.Style._b_middlePanelBackgroundGradientStop
+            whiteColorStart: ByteRubComponents.Style._w_wizardBackgroundGradientStart
+            whiteColorStop: ByteRubComponents.Style._w_middlePanelBackgroundGradientStop
             start: Qt.point(0, 0)
             end: Qt.point(height, width)
         }

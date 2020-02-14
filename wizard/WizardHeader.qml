@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -28,7 +28,7 @@
 
 import "../js/Wizard.js" as Wizard
 import "../components"
-import "../components" as MoneroComponents
+import "../components" as ByteRubComponents
 
 import QtQuick 2.9
 import QtQuick.Layouts 1.2
@@ -44,9 +44,9 @@ ColumnLayout {
     Text {
         text: title
         Layout.fillWidth: true
-        font.family: MoneroComponents.Style.fontRegular.name
-        color: MoneroComponents.Style.defaultFontColor
-        opacity: MoneroComponents.Style.blackTheme ? 1.0 : 0.8
+        font.family: ByteRubComponents.Style.fontRegular.name
+        color: ByteRubComponents.Style.defaultFontColor
+        opacity: ByteRubComponents.Style.blackTheme ? 1.0 : 0.8
         font.pixelSize: {
             if(wizardController.layoutScale === 2 ){
                 return 34;
@@ -66,10 +66,10 @@ ColumnLayout {
         Layout.alignment: Qt.AlignCenter
         visible: parent.subtitle !== ""
 
-        color: MoneroComponents.Style.dimmedFontColor
+        color: ByteRubComponents.Style.dimmedFontColor
         text: subtitle
 
-        font.family: MoneroComponents.Style.fontRegular.name
+        font.family: ByteRubComponents.Style.fontRegular.name
         font.pixelSize: {
             if(wizardController.layoutScale === 2 ){
                 return 16;

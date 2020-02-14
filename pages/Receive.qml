@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -33,8 +33,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 import FontAwesome 1.0
 
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as ByteRubComponents
+import "../components/effects/" as ByteRubEffects
 
 import moneroComponents.Clipboard 1.0
 import moneroComponents.Wallet 1.0
@@ -78,7 +78,7 @@ Rectangle {
             id: addressRow
             spacing: 0
 
-            MoneroComponents.LabelSubheader {
+            ByteRubComponents.LabelSubheader {
                 Layout.fillWidth: true
                 fontSize: 24
                 textFormat: Text.RichText
@@ -114,13 +114,13 @@ Rectangle {
                             anchors.left: parent.left
                             anchors.top: parent.top
                             height: 1
-                            color: MoneroComponents.Style.appWindowBorderColor
+                            color: ByteRubComponents.Style.appWindowBorderColor
                             visible: index !== 0
 
-                            MoneroEffects.ColorTransition {
+                            ByteRubEffects.ColorTransition {
                                 targetObj: parent
-                                blackColor: MoneroComponents.Style._b_appWindowBorderColor
-                                whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+                                blackColor: ByteRubComponents.Style._b_appWindowBorderColor
+                                whiteColor: ByteRubComponents.Style._w_appWindowBorderColor
                             }
                         }
 
@@ -130,9 +130,9 @@ Rectangle {
                             anchors.rightMargin: 80
                             color: "transparent"
 
-                            MoneroComponents.Label {
+                            ByteRubComponents.Label {
                                 id: idLabel
-                                color: index === appWindow.current_subaddress_table_index ? MoneroComponents.Style.defaultFontColor : "#757575"
+                                color: index === appWindow.current_subaddress_table_index ? ByteRubComponents.Style.defaultFontColor : "#757575"
                                 anchors.verticalCenter: parent.verticalCenter
                                 anchors.left: parent.left
                                 anchors.leftMargin: 6
@@ -141,9 +141,9 @@ Rectangle {
                                 themeTransition: false
                             }
 
-                            MoneroComponents.Label {
+                            ByteRubComponents.Label {
                                 id: nameLabel
-                                color: MoneroComponents.Style.dimmedFontColor
+                                color: ByteRubComponents.Style.dimmedFontColor
                                 anchors.verticalCenter: parent.verticalCenter
                                 anchors.left: idLabel.right
                                 anchors.leftMargin: 6
@@ -154,14 +154,14 @@ Rectangle {
                                 themeTransition: false
                             }
 
-                            MoneroComponents.Label {
+                            ByteRubComponents.Label {
                                 id: addressLabel
-                                color: MoneroComponents.Style.defaultFontColor
+                                color: ByteRubComponents.Style.defaultFontColor
                                 anchors.verticalCenter: parent.verticalCenter
                                 anchors.left: parent.right
                                 anchors.leftMargin: -addressLabel.width - 5
                                 fontSize: 16
-                                fontFamily: MoneroComponents.Style.fontMonoRegular.name;
+                                fontFamily: ByteRubComponents.Style.fontMonoRegular.name;
                                 text: TxUtils.addressTruncatePretty(address, mainLayout.width < 520 ? 1 : (mainLayout.width < 650 ? 2 : 3))
                                 themeTransition: false
                             }
@@ -170,7 +170,7 @@ Rectangle {
                                 cursorShape: Qt.PointingHandCursor
                                 anchors.fill: parent
                                 hoverEnabled: true
-                                onEntered: tableItem2.color = MoneroComponents.Style.titleBarButtonHoverColor
+                                onEntered: tableItem2.color = ByteRubComponents.Style.titleBarButtonHoverColor
                                 onExited: tableItem2.color = "transparent"
                                 onClicked: subaddressListView.currentIndex = index;
                             }
@@ -183,10 +183,10 @@ Rectangle {
                             height: 21
                             spacing: 10
 
-                            MoneroComponents.IconButton {
+                            ByteRubComponents.IconButton {
                                 id: renameButton
                                 image: "qrc:///images/edit.svg"
-                                color: MoneroComponents.Style.defaultFontColor
+                                color: ByteRubComponents.Style.defaultFontColor
                                 opacity: 0.5
                                 Layout.preferredWidth: 23
                                 Layout.preferredHeight: 21
@@ -197,10 +197,10 @@ Rectangle {
                                 }
                             }
 
-                            MoneroComponents.IconButton {
+                            ByteRubComponents.IconButton {
                                 id: copyButton
                                 image: "qrc:///images/copy.svg"
-                                color: MoneroComponents.Style.defaultFontColor
+                                color: ByteRubComponents.Style.defaultFontColor
                                 opacity: 0.5
                                 Layout.preferredWidth: 16
                                 Layout.preferredHeight: 21
@@ -225,18 +225,18 @@ Rectangle {
             }
 
             Rectangle {
-                color: MoneroComponents.Style.appWindowBorderColor
+                color: ByteRubComponents.Style.appWindowBorderColor
                 Layout.fillWidth: true
                 height: 1
 
-                MoneroEffects.ColorTransition {
+                ByteRubEffects.ColorTransition {
                     targetObj: parent
-                    blackColor: MoneroComponents.Style._b_appWindowBorderColor
-                    whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+                    blackColor: ByteRubComponents.Style._b_appWindowBorderColor
+                    whiteColor: ByteRubComponents.Style._w_appWindowBorderColor
                 }
             }
 
-            MoneroComponents.CheckBox {
+            ByteRubComponents.CheckBox {
                 id: addNewAddressCheckbox
                 border: false
                 uncheckedIcon: FontAwesome.plusCircle
@@ -267,7 +267,7 @@ Rectangle {
 
             Rectangle {
                 id: qrContainer
-                color: MoneroComponents.Style.blackTheme ? "white" : "transparent"
+                color: ByteRubComponents.Style.blackTheme ? "white" : "transparent"
                 Layout.fillWidth: true
                 Layout.maximumWidth: parent.qrSize
                 Layout.preferredHeight: width
@@ -290,7 +290,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.StandardButton {
+            ByteRubComponents.StandardButton {
                 Layout.preferredWidth: 220
                 small: true
                 text: FontAwesome.save + "  %1".arg(qsTr("Save as image")) + translationManager.emptyString
@@ -299,7 +299,7 @@ Rectangle {
                 onClicked: qrFileDialog.open()
             }
 
-            MoneroComponents.StandardButton {
+            ByteRubComponents.StandardButton {
                 Layout.preferredWidth: 220
                 small: true
                 text: FontAwesome.clipboard + "  %1".arg(qsTr("Copy to clipboard")) + translationManager.emptyString
@@ -311,7 +311,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.StandardButton {
+            ByteRubComponents.StandardButton {
                 Layout.preferredWidth: 220
                 small: true
                 text: FontAwesome.eye + "  %1".arg(qsTr("Show on device")) + translationManager.emptyString

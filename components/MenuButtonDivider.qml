@@ -1,15 +1,15 @@
 import QtQuick 2.9
 
-import "." as MoneroComponents
-import "effects/" as MoneroEffects
+import "." as ByteRubComponents
+import "effects/" as ByteRubEffects
 
 Rectangle {
-    color: MoneroComponents.Style.appWindowBorderColor
+    color: ByteRubComponents.Style.appWindowBorderColor
     height: 1
 
-    MoneroEffects.ColorTransition {
+    ByteRubEffects.ColorTransition {
         targetObj: parent
-        blackColor: MoneroComponents.Style._b_appWindowBorderColor
-        whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+        blackColor: ByteRubComponents.Style._b_appWindowBorderColor
+        whiteColor: ByteRubComponents.Style._w_appWindowBorderColor
     }
 }

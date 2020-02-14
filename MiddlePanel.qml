@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -38,8 +38,8 @@ import moneroComponents.Wallet 1.0
 import "./pages"
 import "./pages/settings"
 import "./pages/merchant"
-import "./components" as MoneroComponents
-import "./components/effects/" as MoneroEffects
+import "./components" as ByteRubComponents
+import "./components/effects/" as ByteRubEffects
 
 Rectangle {
     id: root
@@ -72,20 +72,20 @@ Rectangle {
     Rectangle {
         // grey background on merchantView
         visible: currentView === merchantView
-        color: MoneroComponents.Style.moneroGrey
+        color: ByteRubComponents.Style.moneroGrey
         anchors.fill: parent
     }
 
-    MoneroEffects.GradientBackground {
+    ByteRubEffects.GradientBackground {
         visible: currentView !== merchantView
         anchors.fill: parent
-        fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-        initialStartColor: MoneroComponents.Style.middlePanelBackgroundGradientStart
-        initialStopColor: MoneroComponents.Style.middlePanelBackgroundGradientStop
-        blackColorStart: MoneroComponents.Style._b_middlePanelBackgroundGradientStart
-        blackColorStop: MoneroComponents.Style._b_middlePanelBackgroundGradientStop
-        whiteColorStart: MoneroComponents.Style._w_middlePanelBackgroundGradientStart
-        whiteColorStop: MoneroComponents.Style._w_middlePanelBackgroundGradientStop
+        fallBackColor: ByteRubComponents.Style.middlePanelBackgroundColor
+        initialStartColor: ByteRubComponents.Style.middlePanelBackgroundGradientStart
+        initialStopColor: ByteRubComponents.Style.middlePanelBackgroundGradientStop
+        blackColorStart: ByteRubComponents.Style._b_middlePanelBackgroundGradientStart
+        blackColorStop: ByteRubComponents.Style._b_middlePanelBackgroundGradientStop
+        whiteColorStart: ByteRubComponents.Style._w_middlePanelBackgroundGradientStart
+        whiteColorStop: ByteRubComponents.Style._w_middlePanelBackgroundGradientStop
         start: Qt.point(0, 0)
         end: Qt.point(height, width)
     }
@@ -243,12 +243,12 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         width: 1
-        color: MoneroComponents.Style.appWindowBorderColor
+        color: ByteRubComponents.Style.appWindowBorderColor
 
-        MoneroEffects.ColorTransition {
+        ByteRubEffects.ColorTransition {
             targetObj: parent
-            blackColor: MoneroComponents.Style._b_appWindowBorderColor
-            whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+            blackColor: ByteRubComponents.Style._b_appWindowBorderColor
+            whiteColor: ByteRubComponents.Style._w_appWindowBorderColor
         }
     }
 

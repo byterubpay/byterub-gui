@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2015, The Monero Project
+// Copyright (c) 2014-2015, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -28,8 +28,8 @@
 
 import QtQuick 2.9
 
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as ByteRubComponents
+import "../components/effects/" as ByteRubEffects
 
 Label {
     id: item
@@ -41,12 +41,12 @@ Label {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 2
-        color: MoneroComponents.Style.appWindowBorderColor
+        color: ByteRubComponents.Style.appWindowBorderColor
 
-        MoneroEffects.ColorTransition {
+        ByteRubEffects.ColorTransition {
             targetObj: parent
-            blackColor: MoneroComponents.Style._b_appWindowBorderColor
-            whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+            blackColor: ByteRubComponents.Style._b_appWindowBorderColor
+            whiteColor: ByteRubComponents.Style._w_appWindowBorderColor
         }
     }
 }

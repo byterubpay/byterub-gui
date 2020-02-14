@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -29,13 +29,13 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 
-import "../components" as MoneroComponents
+import "../components" as ByteRubComponents
 
 Item {
     id: button
     property string rightIcon: ""
     property string rightIconInactive: ""
-    property string textColor: button.enabled? MoneroComponents.Style.buttonTextColor: MoneroComponents.Style.buttonTextColorDisabled
+    property string textColor: button.enabled? ByteRubComponents.Style.buttonTextColor: ByteRubComponents.Style.buttonTextColorDisabled
     property bool small: false
     property alias text: label.text
     property int fontSize: {
@@ -70,7 +70,7 @@ Item {
                 when: buttonArea.containsMouse || button.focus
                 PropertyChanges {
                     target: buttonRect
-                    color: MoneroComponents.Style.buttonBackgroundColorHover
+                    color: ByteRubComponents.Style.buttonBackgroundColorHover
                 }
             },
             State {
@@ -78,7 +78,7 @@ Item {
                 when: button.enabled
                 PropertyChanges {
                     target: buttonRect
-                    color: MoneroComponents.Style.buttonBackgroundColor
+                    color: ByteRubComponents.Style.buttonBackgroundColor
                 }
             },
             State {
@@ -86,7 +86,7 @@ Item {
                 when: !button.enabled
                 PropertyChanges {
                     target: buttonRect
-                    color: MoneroComponents.Style.buttonBackgroundColorDisabled
+                    color: ByteRubComponents.Style.buttonBackgroundColorDisabled
                 }
             }
         ]
@@ -103,16 +103,16 @@ Item {
         spacing: 11
         anchors.centerIn: parent
 
-        MoneroComponents.TextPlain {
+        ByteRubComponents.TextPlain {
             id: label
-            font.family: MoneroComponents.Style.fontBold.name
+            font.family: ByteRubComponents.Style.fontBold.name
             font.bold: true
             font.pixelSize: button.fontSize
             color: !buttonArea.pressed ? button.textColor : "transparent"
             visible: text !== ""
             themeTransition: false
 
-            MoneroComponents.TextPlain {
+            ByteRubComponents.TextPlain {
                 anchors.centerIn: parent
                 color: button.textColor
                 font.bold: label.font.bold
