@@ -29,9 +29,9 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import moneroComponents.Wallet 1.0
-import moneroComponents.NetworkType 1.0
-import moneroComponents.Clipboard 1.0
+import byterubComponents.Wallet 1.0
+import byterubComponents.NetworkType 1.0
+import byterubComponents.Clipboard 1.0
 import FontAwesome 1.0
 
 import "components" as ByteRubComponents
@@ -103,7 +103,7 @@ Rectangle {
         end: Qt.point(height, width)
     }
 
-    // card with monero logo
+    // card with byterub logo
     Column {
         visible: true
         z: 2

@@ -33,7 +33,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import moneroComponents.Wallet 1.0
+import byterubComponents.Wallet 1.0
 
 import "./pages"
 import "./pages/settings"
@@ -72,7 +72,7 @@ Rectangle {
     Rectangle {
         // grey background on merchantView
         visible: currentView === merchantView
-        color: ByteRubComponents.Style.moneroGrey
+        color: ByteRubComponents.Style.byterubGrey
         anchors.fill: parent
     }
 

@@ -35,10 +35,10 @@ import "../components" as ByteRubComponents
 import "../components/effects/" as ByteRubEffects
 
 import "../js/TxUtils.js" as TxUtils
-import moneroComponents.AddressBook 1.0
-import moneroComponents.AddressBookModel 1.0
-import moneroComponents.Clipboard 1.0
-import moneroComponents.NetworkType 1.0
+import byterubComponents.AddressBook 1.0
+import byterubComponents.AddressBookModel 1.0
+import byterubComponents.Clipboard 1.0
+import byterubComponents.NetworkType 1.0
 import FontAwesome 1.0
 
 Rectangle {

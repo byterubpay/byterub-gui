@@ -1714,8 +1714,8 @@ Pot canviar la contrasenya en la configuració del portamonedes.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="120"/>
-        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getmonero.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the monero-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
-        <translation>Per ofuscar quins ingressos s&apos;estan gastant en una transacció de ByteRub, un tercer no hauria de poder dir quines entrades en un anell han estat gastades. Fer-ho debilitaria la protecció que ofereixen les signatures d&apos;anell. Si es coneixen tots menys un dels ingressos que es gasten, llavors l&apos;entrada que està essent realment gastada es fa evident i per tant anul·la l&apos;efecte de les signatures d&apos;anell, una de les tres capes principals de protecció de la privacitat que utilitza ByteRub. &lt;br&gt;Per ajudar a evitar aquestes entrades en les transaccions, es pot utilitzar una llista de d&apos;entrades de despeses conegudes per evitar-ne l&apos;ús en noves transaccions. Aquesta llista és mantinguda pel projecte ByteRub i està disponible al lloc web de getmonero.org, d&apos;on podeu importar aquesta llista.&lt;br&gt;De forma alternatva, vostè mateix pot escanejar la blockchain (i la blockchain dels clons que reutilitzen les claus de ByteRub) fent servir l&apos;eina de sortides monero-blockchain-mark-spent-outputs per crear una llista coneguda de despeses de sortida. &lt;br&gt;</translation>
+        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getbyterub.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the byterub-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
+        <translation>Per ofuscar quins ingressos s&apos;estan gastant en una transacció de ByteRub, un tercer no hauria de poder dir quines entrades en un anell han estat gastades. Fer-ho debilitaria la protecció que ofereixen les signatures d&apos;anell. Si es coneixen tots menys un dels ingressos que es gasten, llavors l&apos;entrada que està essent realment gastada es fa evident i per tant anul·la l&apos;efecte de les signatures d&apos;anell, una de les tres capes principals de protecció de la privacitat que utilitza ByteRub. &lt;br&gt;Per ajudar a evitar aquestes entrades en les transaccions, es pot utilitzar una llista de d&apos;entrades de despeses conegudes per evitar-ne l&apos;ús en noves transaccions. Aquesta llista és mantinguda pel projecte ByteRub i està disponible al lloc web de getbyterub.org, d&apos;on podeu importar aquesta llista.&lt;br&gt;De forma alternatva, vostè mateix pot escanejar la blockchain (i la blockchain dels clons que reutilitzen les claus de ByteRub) fent servir l&apos;eina de sortides byterub-blockchain-mark-spent-outputs per crear una llista coneguda de despeses de sortida. &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="141"/>
@@ -3362,8 +3362,8 @@ Comissió: </translation>
     </message>
     <message>
         <location filename="../main.qml" line="1057"/>
-        <source>This address received %1 monero, with %2 confirmation(s).</source>
-        <translation>Aquesta adreça ha rebut %1 monero, amb %2 confirmacion(s).</translation>
+        <source>This address received %1 byterub, with %2 confirmation(s).</source>
+        <translation>Aquesta adreça ha rebut %1 byterub, amb %2 confirmacion(s).</translation>
     </message>
     <message>
         <location filename="../main.qml" line="302"/>
@@ -3441,8 +3441,8 @@ potser se us requereix la participació.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1054"/>
-        <source>This address received %1 monero, but the transaction is not yet mined</source>
-        <translation>Aquesta adreça ha rebut %1 monero, però la transacció encara no ha estat minada</translation>
+        <source>This address received %1 byterub, but the transaction is not yet mined</source>
+        <translation>Aquesta adreça ha rebut %1 byterub, però la transacció encara no ha estat minada</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1061"/>
@@ -3486,7 +3486,7 @@ potser se us requereix la participació.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2000"/>
-        <source>New version of ByteRub v%1 is available. Check out getmonero.org</source>
+        <source>New version of ByteRub v%1 is available. Check out getbyterub.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

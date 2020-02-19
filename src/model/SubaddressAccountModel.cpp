@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -61,7 +61,7 @@ QVariant SubaddressAccountModel::data(const QModelIndex &index, int role) const
 
     QVariant result;
 
-    bool found = m_subaddressAccount->getRow(index.row(), [&result, &role](const Monero::SubaddressAccountRow &row) {
+    bool found = m_subaddressAccount->getRow(index.row(), [&result, &role](const ByteRub::SubaddressAccountRow &row) {
         switch (role) {
         case SubaddressAccountAddressRole:
             result = QString::fromStdString(row.getAddress());

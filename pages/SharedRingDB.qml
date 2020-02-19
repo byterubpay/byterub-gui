@@ -33,7 +33,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 
 import "../components" as ByteRubComponents
-import moneroComponents.Clipboard 1.0
+import byterubComponents.Clipboard 1.0
 
 Rectangle {
     property alias panelHeight: mainLayout.height
@@ -124,10 +124,10 @@ Rectangle {
                     "actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers " +
                     "of privacy protection ByteRub uses.<br>" +
                     "To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new " +
-                    "transactions. Such a list is maintained by the ByteRub project and is available on the getmonero.org website, " +
+                    "transactions. Such a list is maintained by the ByteRub project and is available on the getbyterub.org website, " +
                     "and you can import this list here.<br>" +
                     "Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself " +
-                    "using the monero-blockchain-mark-spent-outputs tool to create a list of known spent outputs.<br>"
+                    "using the byterub-blockchain-mark-spent-outputs tool to create a list of known spent outputs.<br>"
                 ) + translationManager.emptyString
                 sharedRingDBDialog.icon = StandardIcon.Information
                 sharedRingDBDialog.open()

@@ -32,8 +32,8 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 
-import moneroComponents.Clipboard 1.0
-import moneroComponents.WalletManager 1.0
+import byterubComponents.Clipboard 1.0
+import byterubComponents.WalletManager 1.0
 import "../components" as ByteRubComponents
 
 Rectangle {

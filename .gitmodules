@@ -1,4 +1,4 @@
-[submodule "monero"]
-	path = monero
-	url = https://github.com/byterubpay/monero
+[submodule "byterub"]
+	path = byterub
+	url = https://github.com/byterubpay/byterub
 	ignore = all

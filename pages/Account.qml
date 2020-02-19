@@ -36,11 +36,11 @@ import FontAwesome 1.0
 import "../components" as ByteRubComponents
 import "../components/effects/" as ByteRubEffects
 
-import moneroComponents.Clipboard 1.0
-import moneroComponents.Wallet 1.0
-import moneroComponents.WalletManager 1.0
-import moneroComponents.TransactionHistory 1.0
-import moneroComponents.TransactionHistoryModel 1.0
+import byterubComponents.Clipboard 1.0
+import byterubComponents.Wallet 1.0
+import byterubComponents.WalletManager 1.0
+import byterubComponents.TransactionHistory 1.0
+import byterubComponents.TransactionHistoryModel 1.0
 import "../js/TxUtils.js" as TxUtils
 
 Rectangle {

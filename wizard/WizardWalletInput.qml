@@ -55,7 +55,7 @@ GridLayout {
     function reset() {
         walletName.error = !walletName.verify();
         walletLocation.error = walletLocation.text === "";
-        walletLocation.text = moneroAccountsDir + "/";
+        walletLocation.text = byterubAccountsDir + "/";
         walletName.text = defaultAccountName;
     }
 
@@ -88,7 +88,7 @@ GridLayout {
         labelFontSize: 14
         placeholderText: "..."
         placeholderFontSize: 16
-        text: moneroAccountsDir + "/"
+        text: byterubAccountsDir + "/"
         inlineButton.small: true
         inlineButtonText: qsTr("Browse") + translationManager.emptyString
         inlineButton.onClicked: {

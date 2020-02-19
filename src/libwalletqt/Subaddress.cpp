@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -29,7 +29,7 @@
 #include "Subaddress.h"
 #include <QDebug>
 
-Subaddress::Subaddress(Monero::Subaddress *subaddressImpl, QObject *parent)
+Subaddress::Subaddress(ByteRub::Subaddress *subaddressImpl, QObject *parent)
   : QObject(parent), m_subaddressImpl(subaddressImpl)
 {
     qDebug(__FUNCTION__);
@@ -54,7 +54,7 @@ void Subaddress::getAll() const
     emit refreshFinished();
 }
 
-bool Subaddress::getRow(int index, std::function<void (Monero::SubaddressRow &row)> callback) const
+bool Subaddress::getRow(int index, std::function<void (ByteRub::SubaddressRow &row)> callback) const
 {
     QReadLocker locker(&m_lock);
 

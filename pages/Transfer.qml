@@ -29,10 +29,10 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
-import moneroComponents.Clipboard 1.0
-import moneroComponents.PendingTransaction 1.0
-import moneroComponents.Wallet 1.0
-import moneroComponents.NetworkType 1.0
+import byterubComponents.Clipboard 1.0
+import byterubComponents.PendingTransaction 1.0
+import byterubComponents.Wallet 1.0
+import byterubComponents.NetworkType 1.0
 import FontAwesome 1.0
 import "../components"
 import "../components" as ByteRubComponents
@@ -564,7 +564,7 @@ Rectangle {
     FileDialog {
         id: signTxDialog
         title: qsTr("Please choose a file") + translationManager.emptyString
-        folder: "file://" +moneroAccountsDir
+        folder: "file://" +byterubAccountsDir
         nameFilters: [ "Unsigned transfers (*)"]
 
         onAccepted: {
@@ -625,7 +625,7 @@ Rectangle {
     FileDialog {
         id: submitTxDialog
         title: qsTr("Please choose a file") + translationManager.emptyString
-        folder: "file://" +moneroAccountsDir
+        folder: "file://" +byterubAccountsDir
         nameFilters: [ "signed transfers (*)"]
 
         onAccepted: {

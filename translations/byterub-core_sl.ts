@@ -1711,8 +1711,8 @@ You can change the password in the wallet settings.</source>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="120"/>
-        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getmonero.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the monero-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
-        <translation>Da lahko v ByteRub transakciji zakrijete kateri inputi so porabljeni, tretja oseba ne sme vedeti, kateri inputi v obroču so že porabljeni. To bi zmanjšalo varnost, ki jo zagotavljajo obročni podpisi. Če je znano, da so vsi inputi razen enega porabljeni, potem je zadnji input, ki se ga porablja očiten. S tem so obročni podpisi, eden izmed treh stebrov varne zasebnosti Monera, neefektivni. Da se transakcije izognejo takšnim inputom, se uporablja lista znano že porabljenih inputov, ki se jih ne uporablja v novih transakcijah. Takšno listo ureja ByteRub projekt in je dobavljiva na getmonero.org. To listo lahko uvoziš tukaj. &lt;br&gt;Alternativno lahko sam preiščeš blockchain (vključno z ByteRub kloni, ki si delijo ključe) z uporabo orodja monero-blockchain-mark-spent-outputs, ki ustvari listo znanih, že porabljenih outputov.&lt;br&gt;</translation>
+        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getbyterub.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the byterub-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
+        <translation>Da lahko v ByteRub transakciji zakrijete kateri inputi so porabljeni, tretja oseba ne sme vedeti, kateri inputi v obroču so že porabljeni. To bi zmanjšalo varnost, ki jo zagotavljajo obročni podpisi. Če je znano, da so vsi inputi razen enega porabljeni, potem je zadnji input, ki se ga porablja očiten. S tem so obročni podpisi, eden izmed treh stebrov varne zasebnosti Monera, neefektivni. Da se transakcije izognejo takšnim inputom, se uporablja lista znano že porabljenih inputov, ki se jih ne uporablja v novih transakcijah. Takšno listo ureja ByteRub projekt in je dobavljiva na getbyterub.org. To listo lahko uvoziš tukaj. &lt;br&gt;Alternativno lahko sam preiščeš blockchain (vključno z ByteRub kloni, ki si delijo ključe) z uporabo orodja byterub-blockchain-mark-spent-outputs, ki ustvari listo znanih, že porabljenih outputov.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="141"/>
@@ -3357,8 +3357,8 @@ your input may be required.</source>
     </message>
     <message>
         <location filename="../main.qml" line="1057"/>
-        <source>This address received %1 monero, with %2 confirmation(s).</source>
-        <translation>Ta naslov je prejel %1 monerov, s %2 potrditev.</translation>
+        <source>This address received %1 byterub, with %2 confirmation(s).</source>
+        <translation>Ta naslov je prejel %1 byterubv, s %2 potrditev.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1068"/>
@@ -3443,7 +3443,7 @@ your input may be required.</source>
     </message>
     <message>
         <location filename="../main.qml" line="2000"/>
-        <source>New version of ByteRub v%1 is available. Check out getmonero.org</source>
+        <source>New version of ByteRub v%1 is available. Check out getbyterub.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3519,7 +3519,7 @@ Provizija: </translation>
     </message>
     <message>
         <location filename="../main.qml" line="1054"/>
-        <source>This address received %1 monero, but the transaction is not yet mined</source>
+        <source>This address received %1 byterub, but the transaction is not yet mined</source>
         <translation>Ta naslov je prejel %1 monera(ov), ampak transakcija še ni v bloku</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -71,11 +71,11 @@ QString getAccountName(){
 QString xdgMime(QApplication &app){
     return QString(
         "[Desktop Entry]\n"
-        "Name=Monero GUI\n"
-        "GenericName=Monero-GUI\n"
-        "X-GNOME-FullName=Monero-GUI\n"
-        "Comment=Monero GUI\n"
-        "Keywords=Monero;\n"
+        "Name=ByteRub GUI\n"
+        "GenericName=ByteRub-GUI\n"
+        "X-GNOME-FullName=ByteRub-GUI\n"
+        "Comment=ByteRub GUI\n"
+        "Keywords=ByteRub;\n"
         "Exec=%1 %u\n"
         "Terminal=false\n"
         "Type=Application\n"

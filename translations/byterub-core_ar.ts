@@ -1478,7 +1478,7 @@ The old wallet cache file will be renamed and can be restored later.
     <message>
         <location filename="../pages/settings/SettingsNode.qml" line="274"/>
         <source>To find a remote node, type &apos;ByteRub remote node&apos; into your favorite search engine. Please ensure the node is run by a trusted third-party.</source>
-        <translation>لإيجاد خادم عن بعد ابحث عن -monero remote node - من فضلك تأكد ان الخادم مشغل بواسطه جهه موثوق بها.</translation>
+        <translation>لإيجاد خادم عن بعد ابحث عن -byterub remote node - من فضلك تأكد ان الخادم مشغل بواسطه جهه موثوق بها.</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsNode.qml" line="282"/>
@@ -1710,10 +1710,10 @@ You can change the password in the wallet settings.</source>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="120"/>
-        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getmonero.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the monero-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
+        <source>In order to obscure which inputs in a ByteRub transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection ByteRub uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the ByteRub project and is available on the getbyterub.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing ByteRub clones) yourself using the byterub-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
         <translation>لحجب اي المدخلات يتم انفاقها في معامله مونيرو يجب الا يتمكن طرف تالت من معرفه اي من المدخلات في المعامله تم انفاقها. القدره علي فعل ذلك تضعف الحمايه التي توفرها توقيعات الطوق.اذا إذا كانت جميع المدخلات ماعدا واحدة قد تم إنفاقها بالفعل ، فإن المدخلات التي يتم إنفاقها بالفعل تصبح ظاهرة ، وبالتالي تبطل أثر توقيعات الطوق وهي واحده من التلات طبقات الرئيسيه لحمايه الخصوصيه التي يوفرها مونيرو.
-لمساعده المعاملات علي تجنب تلك المدخلات  يمكن استخدام قائمة بالأشكال المستنفذة المعروفة لتجنب استخدامها في معاملات جديدة. يتم الاحتفاظ بمثل هذه القائمة من خلال مشروع مونيرو وهو متاح على موقع getmonero.org ويمكنك استيراد هذه القائمه هنا.
-أيضاً يمكنك فحص سلسله الكتل بنفسك ( وسلسله الكتل التي تعيد استخدام مفاتيح مونيرو) بنفسك بإستخدام أداه monero-blockchain-mark-spent-outputs لإنشاء قائمة بالمخرجات المستنفذة المعروفة.</translation>
+لمساعده المعاملات علي تجنب تلك المدخلات  يمكن استخدام قائمة بالأشكال المستنفذة المعروفة لتجنب استخدامها في معاملات جديدة. يتم الاحتفاظ بمثل هذه القائمة من خلال مشروع مونيرو وهو متاح على موقع getbyterub.org ويمكنك استيراد هذه القائمه هنا.
+أيضاً يمكنك فحص سلسله الكتل بنفسك ( وسلسله الكتل التي تعيد استخدام مفاتيح مونيرو) بنفسك بإستخدام أداه byterub-blockchain-mark-spent-outputs لإنشاء قائمة بالمخرجات المستنفذة المعروفة.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="141"/>
@@ -3401,7 +3401,7 @@ your input may be required.</source>
     </message>
     <message>
         <location filename="../main.qml" line="1057"/>
-        <source>This address received %1 monero, with %2 confirmation(s).</source>
+        <source>This address received %1 byterub, with %2 confirmation(s).</source>
         <translation>هذا العنوان استلم %1 مونيرو , مع %2 تأكيدات</translation>
     </message>
     <message>
@@ -3487,7 +3487,7 @@ your input may be required.</source>
     </message>
     <message>
         <location filename="../main.qml" line="2000"/>
-        <source>New version of ByteRub v%1 is available. Check out getmonero.org</source>
+        <source>New version of ByteRub v%1 is available. Check out getbyterub.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3523,7 +3523,7 @@ your input may be required.</source>
     </message>
     <message>
         <location filename="../main.qml" line="1054"/>
-        <source>This address received %1 monero, but the transaction is not yet mined</source>
+        <source>This address received %1 byterub, but the transaction is not yet mined</source>
         <translation>هذا العنوان استلم %1 مونيرو, لكن المعامله لم يتم تعدينها بعد</translation>
     </message>
     <message>
