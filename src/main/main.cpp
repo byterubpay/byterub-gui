@@ -173,18 +173,18 @@ int main(int argc, char *argv[])
     // enable High DPI scaling
     qputenv("QT_ENABLE_HIGHDPI_SCALING", "1");
 
-    // Turn off colors in monerod log output.
+    // Turn off colors in byterubd log output.
     qputenv("TERM", "goaway");
 
     MainApp app(argc, argv);
 
-    app.setApplicationName("monero-core");
-    app.setOrganizationDomain("getmonero.org");
+    app.setApplicationName("byterub-core");
+    app.setOrganizationDomain("getbyterub.org");
     app.setOrganizationName("byterubpay");
 
     // Ask to enable Tails OS persistence mode, it affects:
     // - Log file location
-    // - QML Settings file location (monero-core.conf)
+    // - QML Settings file location (byterub-core.conf)
     // - Default wallets path
     // Target directory is: ~/Persistent/ByteRub
     if (isTails) {
@@ -194,17 +194,17 @@ int main(int argc, char *argv[])
             TailsOS::askPersistence();
     }
 
-    QString moneroAccountsDir;
+    QString byterubAccountsDir;
     #if defined(Q_OS_WIN) || defined(Q_OS_IOS)
-        QStringList moneroAccountsRootDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation);
+        QStringList byterubAccountsRootDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation);
     #else
-        QStringList moneroAccountsRootDir = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
+        QStringList byterubAccountsRootDir = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
     #endif
 
     if(isTails && TailsOS::usePersistence){
-        moneroAccountsDir = QDir::homePath() + "/Persistent/ByteRub/wallets";
-    } else if (!moneroAccountsRootDir.empty()) {
-        moneroAccountsDir = moneroAccountsRootDir.at(0) + "/ByteRub/wallets";
+        byterubAccountsDir = QDir::homePath() + "/Persistent/ByteRub/wallets";
+    } else if (!byterubAccountsRootDir.empty()) {
+        byterubAccountsDir = byterubAccountsRootDir.at(0) + "/ByteRub/wallets";
     } else {
         qCritical() << "Error: accounts root directory could not be set";
         return 1;
@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
 
     // Log settings
     const QString logPath = getLogPath(parser.value(logPathOption));
-    ByteRub::Wallet::init(argv[0], "monero-wallet-gui", logPath.toStdString().c_str(), true);
+    ByteRub::Wallet::init(argv[0], "byterub-wallet-gui", logPath.toStdString().c_str(), true);
     qInstallMessageHandler(messageHandler);
 
     // loglevel is configured in main.qml. Anything lower than
@@ -295,60 +295,60 @@ int main(int argc, char *argv[])
                                    << " - dpi: " << dpi << " - ratio:" << calculated_ratio;
 
     // registering types for QML
-    qmlRegisterType<clipboardAdapter>("moneroComponents.Clipboard", 1, 0, "Clipboard");
+    qmlRegisterType<clipboardAdapter>("byterubComponents.Clipboard", 1, 0, "Clipboard");
 
     // Temporary Qt.labs.settings replacement
-    qmlRegisterType<ByteRubSettings>("moneroComponents.Settings", 1, 0, "ByteRubSettings");
+    qmlRegisterType<ByteRubSettings>("byterubComponents.Settings", 1, 0, "ByteRubSettings");
 
-    qmlRegisterUncreatableType<Wallet>("moneroComponents.Wallet", 1, 0, "Wallet", "Wallet can't be instantiated directly");
+    qmlRegisterUncreatableType<Wallet>("byterubComponents.Wallet", 1, 0, "Wallet", "Wallet can't be instantiated directly");
 
 
-    qmlRegisterUncreatableType<PendingTransaction>("moneroComponents.PendingTransaction", 1, 0, "PendingTransaction",
+    qmlRegisterUncreatableType<PendingTransaction>("byterubComponents.PendingTransaction", 1, 0, "PendingTransaction",
                                                    "PendingTransaction can't be instantiated directly");
 
-    qmlRegisterUncreatableType<UnsignedTransaction>("moneroComponents.UnsignedTransaction", 1, 0, "UnsignedTransaction",
+    qmlRegisterUncreatableType<UnsignedTransaction>("byterubComponents.UnsignedTransaction", 1, 0, "UnsignedTransaction",
                                                    "UnsignedTransaction can't be instantiated directly");
 
-    qmlRegisterUncreatableType<WalletManager>("moneroComponents.WalletManager", 1, 0, "WalletManager",
+    qmlRegisterUncreatableType<WalletManager>("byterubComponents.WalletManager", 1, 0, "WalletManager",
                                                    "WalletManager can't be instantiated directly");
 
-    qmlRegisterUncreatableType<TranslationManager>("moneroComponents.TranslationManager", 1, 0, "TranslationManager",
+    qmlRegisterUncreatableType<TranslationManager>("byterubComponents.TranslationManager", 1, 0, "TranslationManager",
                                                    "TranslationManager can't be instantiated directly");
 
-    qmlRegisterUncreatableType<WalletKeysFilesModel>("moneroComponents.walletKeysFilesModel", 1, 0, "WalletKeysFilesModel",
+    qmlRegisterUncreatableType<WalletKeysFilesModel>("byterubComponents.walletKeysFilesModel", 1, 0, "WalletKeysFilesModel",
                                                    "walletKeysFilesModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<TransactionHistoryModel>("moneroComponents.TransactionHistoryModel", 1, 0, "TransactionHistoryModel",
+    qmlRegisterUncreatableType<TransactionHistoryModel>("byterubComponents.TransactionHistoryModel", 1, 0, "TransactionHistoryModel",
                                                         "TransactionHistoryModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<TransactionHistorySortFilterModel>("moneroComponents.TransactionHistorySortFilterModel", 1, 0, "TransactionHistorySortFilterModel",
+    qmlRegisterUncreatableType<TransactionHistorySortFilterModel>("byterubComponents.TransactionHistorySortFilterModel", 1, 0, "TransactionHistorySortFilterModel",
                                                         "TransactionHistorySortFilterModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<TransactionHistory>("moneroComponents.TransactionHistory", 1, 0, "TransactionHistory",
+    qmlRegisterUncreatableType<TransactionHistory>("byterubComponents.TransactionHistory", 1, 0, "TransactionHistory",
                                                         "TransactionHistory can't be instantiated directly");
 
-    qmlRegisterUncreatableType<TransactionInfo>("moneroComponents.TransactionInfo", 1, 0, "TransactionInfo",
+    qmlRegisterUncreatableType<TransactionInfo>("byterubComponents.TransactionInfo", 1, 0, "TransactionInfo",
                                                         "TransactionHistory can't be instantiated directly");
 #ifndef Q_OS_IOS
-    qmlRegisterUncreatableType<DaemonManager>("moneroComponents.DaemonManager", 1, 0, "DaemonManager",
+    qmlRegisterUncreatableType<DaemonManager>("byterubComponents.DaemonManager", 1, 0, "DaemonManager",
                                                    "DaemonManager can't be instantiated directly");
 #endif
-    qmlRegisterUncreatableType<AddressBookModel>("moneroComponents.AddressBookModel", 1, 0, "AddressBookModel",
+    qmlRegisterUncreatableType<AddressBookModel>("byterubComponents.AddressBookModel", 1, 0, "AddressBookModel",
                                                         "AddressBookModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<AddressBook>("moneroComponents.AddressBook", 1, 0, "AddressBook",
+    qmlRegisterUncreatableType<AddressBook>("byterubComponents.AddressBook", 1, 0, "AddressBook",
                                                         "AddressBook can't be instantiated directly");
 
-    qmlRegisterUncreatableType<SubaddressModel>("moneroComponents.SubaddressModel", 1, 0, "SubaddressModel",
+    qmlRegisterUncreatableType<SubaddressModel>("byterubComponents.SubaddressModel", 1, 0, "SubaddressModel",
                                                         "SubaddressModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<Subaddress>("moneroComponents.Subaddress", 1, 0, "Subaddress",
+    qmlRegisterUncreatableType<Subaddress>("byterubComponents.Subaddress", 1, 0, "Subaddress",
                                                         "Subaddress can't be instantiated directly");
 
-    qmlRegisterUncreatableType<SubaddressAccountModel>("moneroComponents.SubaddressAccountModel", 1, 0, "SubaddressAccountModel",
+    qmlRegisterUncreatableType<SubaddressAccountModel>("byterubComponents.SubaddressAccountModel", 1, 0, "SubaddressAccountModel",
                                                         "SubaddressAccountModel can't be instantiated directly");
 
-    qmlRegisterUncreatableType<SubaddressAccount>("moneroComponents.SubaddressAccount", 1, 0, "SubaddressAccount",
+    qmlRegisterUncreatableType<SubaddressAccount>("byterubComponents.SubaddressAccount", 1, 0, "SubaddressAccount",
                                                         "SubaddressAccount can't be instantiated directly");
 
     qRegisterMetaType<PendingTransaction::Priority>();
@@ -356,10 +356,10 @@ int main(int argc, char *argv[])
     qRegisterMetaType<TransactionHistoryModel::TransactionInfoRole>();
 
     qRegisterMetaType<NetworkType::Type>();
-    qmlRegisterType<NetworkType>("moneroComponents.NetworkType", 1, 0, "NetworkType");
+    qmlRegisterType<NetworkType>("byterubComponents.NetworkType", 1, 0, "NetworkType");
 
 #ifdef WITH_SCANNER
-    qmlRegisterType<QrCodeScanner>("moneroComponents.QRCodeScanner", 1, 0, "QRCodeScanner");
+    qmlRegisterType<QrCodeScanner>("byterubComponents.QRCodeScanner", 1, 0, "QRCodeScanner");
 #endif
 
     QQmlApplicationEngine engine;
@@ -371,7 +371,7 @@ int main(int argc, char *argv[])
 
     engine.addImportPath(":/fonts");
 
-    engine.rootContext()->setContextProperty("moneroAccountsDir", moneroAccountsDir);
+    engine.rootContext()->setContextProperty("byterubAccountsDir", byterubAccountsDir);
 
     WalletManager *walletManager = WalletManager::instance();
 
@@ -425,7 +425,7 @@ int main(int argc, char *argv[])
     if (accountName.isEmpty())
         accountName = qgetenv("USERNAME"); // Windows
     if (accountName.isEmpty())
-        accountName = "My monero Account";
+        accountName = "My byterub Account";
 
     engine.rootContext()->setContextProperty("defaultAccountName", accountName);
     engine.rootContext()->setContextProperty("homePath", QDir::homePath());

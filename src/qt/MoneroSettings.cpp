@@ -43,7 +43,7 @@
 #include "qt/ByteRubSettings.h"
 
 /*!
-    \qmlmodule moneroSettings 1.0
+    \qmlmodule byterubSettings 1.0
     \title ByteRub Settings QML Component
     \ingroup qmlmodules
     \brief Provides persistent platform-independent application settings.
@@ -57,7 +57,7 @@
 
     To use this module, import the module with the following line:
     \code
-    import moneroComponents.Settings 1.0
+    import byterubComponents.Settings 1.0
     \endcode
 
     Usage:

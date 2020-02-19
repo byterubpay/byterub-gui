@@ -36,7 +36,7 @@ import "../../js/Utils.js" as Utils
 import "../../components" as ByteRubComponents
 import "../../pages"
 import "."
-import moneroComponents.Clipboard 1.0
+import byterubComponents.Clipboard 1.0
 
 ColumnLayout {
     id: settingsPage

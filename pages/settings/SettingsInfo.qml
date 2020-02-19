@@ -134,7 +134,7 @@ Rectangle {
                 Layout.fillWidth: true
                 color: ByteRubComponents.Style.dimmedFontColor
                 font.pixelSize: 14
-                property string walletPath: (isIOS ?  moneroAccountsDir : "") + appWindow.walletPath()
+                property string walletPath: (isIOS ?  byterubAccountsDir : "") + appWindow.walletPath()
                 text: "\
                     <style type='text/css'>\
                         a {cursor:pointer;text-decoration: none; color: #FF6C3C}\
@@ -393,7 +393,7 @@ Rectangle {
 
                 var wallet_path = walletPath();
                 if(isIOS)
-                    wallet_path = moneroAccountsDir + wallet_path;
+                    wallet_path = byterubAccountsDir + wallet_path;
                 data += wallet_path;
 
                 data += "\nWallet creation height: ";

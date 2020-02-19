@@ -72,7 +72,7 @@ Rectangle {
             Layout.preferredWidth: parent.height * 3
         }
 
-        // monero logo
+        // byterub logo
         Item {
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height
@@ -85,7 +85,7 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
 
-                source: "qrc:///images/moneroLogo_white.png"
+                source: "qrc:///images/byterubLogo_white.png"
             }
         }
 

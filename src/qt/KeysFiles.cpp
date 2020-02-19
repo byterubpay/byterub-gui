@@ -98,15 +98,15 @@ void WalletKeysFilesModel::clear()
     endResetModel();
 }
 
-void WalletKeysFilesModel::refresh(const QString &moneroAccountsDir)
+void WalletKeysFilesModel::refresh(const QString &byterubAccountsDir)
 {
     this->clear();
-    this->findWallets(moneroAccountsDir);
+    this->findWallets(byterubAccountsDir);
 }
 
-void WalletKeysFilesModel::findWallets(const QString &moneroAccountsDir)
+void WalletKeysFilesModel::findWallets(const QString &byterubAccountsDir)
 {
-    QStringList walletDir = this->m_walletManager->findWallets(moneroAccountsDir);
+    QStringList walletDir = this->m_walletManager->findWallets(byterubAccountsDir);
     foreach(QString wallet, walletDir){
         if(!fileExists(wallet + ".keys"))
             continue;
