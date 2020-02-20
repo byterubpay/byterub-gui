@@ -64,8 +64,8 @@ fi
 source ./utils.sh
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-MONERO_DIR=byterub
-MONEROD_EXEC=byterubd
+BYTERUB_DIR=byterub
+BYTERUBD_EXEC=byterubd
 
 MAKE='make'
 if [[ $platform == *bsd* ]]; then
@@ -95,16 +95,16 @@ fi
 if [ "$platform" == "darwin" ]; then
     BIN_PATH=$BIN_PATH/byterub-wallet-gui.app/Contents/MacOS/
 elif [ "$platform" == "mingw64" ] || [ "$platform" == "mingw32" ]; then
-    MONEROD_EXEC=byterubd.exe
+    BYTERUBD_EXEC=byterubd.exe
 fi
 
 # force version update
 get_tag
 echo "var GUI_VERSION = \"$TAGNAME\"" > version.js
-pushd "$MONERO_DIR"
+pushd "$BYTERUB_DIR"
 get_tag
 popd
-echo "var GUI_MONERO_VERSION = \"$TAGNAME\"" >> version.js
+echo "var GUI_BYTERUB_VERSION = \"$TAGNAME\"" >> version.js
 
 cd build
 if ! QMAKE=$(find_command qmake qmake-qt5); then
@@ -116,7 +116,7 @@ $MAKE || exit
 
 # Copy byterubd to bin folder
 if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
-cp ../$MONERO_DIR/bin/$MONEROD_EXEC $BIN_PATH
+cp ../$BYTERUB_DIR/bin/$BYTERUBD_EXEC $BIN_PATH
 fi
 
 # make deploy

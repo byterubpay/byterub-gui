@@ -89,21 +89,21 @@ ApplicationWindow {
     property bool themeTransition: false
 
     // fiat price conversion
-    property real fiatPriceXMRUSD: 0
-    property real fiatPriceXMREUR: 0
+    property real fiatPriceBTRUSD: 0
+    property real fiatPriceBTREUR: 0
     property var fiatPriceAPIs: {
         return {
             "kraken": {
-                "xmrusd": "https://api.kraken.com/0/public/Ticker?pair=XMRUSD",
-                "xmreur": "https://api.kraken.com/0/public/Ticker?pair=XMREUR"
+                "btrusd": "https://api.kraken.com/0/public/Ticker?pair=BTRUSD",
+                "btreur": "https://api.kraken.com/0/public/Ticker?pair=BTREUR"
             },
             "coingecko": {
-                "xmrusd": "https://api.coingecko.com/api/v3/simple/price?ids=byterub&vs_currencies=usd",
-                "xmreur": "https://api.coingecko.com/api/v3/simple/price?ids=byterub&vs_currencies=eur"
+                "btrusd": "https://api.coingecko.com/api/v3/simple/price?ids=byterub&vs_currencies=usd",
+                "btreur": "https://api.coingecko.com/api/v3/simple/price?ids=byterub&vs_currencies=eur"
             },
             "cryptocompare": {
-                "xmrusd": "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=USD",
-                "xmreur": "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=EUR",
+                "btrusd": "https://min-api.cryptocompare.com/data/price?fsym=BTR&tsyms=USD",
+                "btreur": "https://min-api.cryptocompare.com/data/price?fsym=BTR&tsyms=EUR",
             }
         }
     }
@@ -834,10 +834,10 @@ ApplicationWindow {
 
         // validate amount;
         if (amount !== "(all)") {
-            var amountxmr = walletManager.amountFromString(amount);
-            console.log("integer amount: ", amountxmr);
+            var amountbtr = walletManager.amountFromString(amount);
+            console.log("integer amount: ", amountbtr);
             console.log("integer unlocked", currentWallet.unlockedBalance())
-            if (amountxmr <= 0) {
+            if (amountbtr <= 0) {
                 hideProcessingSplash()
                 informationPopup.title = qsTr("Error") + translationManager.emptyString;
                 informationPopup.text  = qsTr("Amount is wrong: expected number from %1 to %2")
@@ -849,7 +849,7 @@ ApplicationWindow {
                 informationPopup.onCloseCallback = null
                 informationPopup.open()
                 return;
-            } else if (amountxmr > currentWallet.unlockedBalance()) {
+            } else if (amountbtr > currentWallet.unlockedBalance()) {
                 hideProcessingSplash()
                 informationPopup.title = qsTr("Error") + translationManager.emptyString;
                 informationPopup.text  = qsTr("Insufficient funds. Unlocked balance: %1")
@@ -866,7 +866,7 @@ ApplicationWindow {
         if (amount === "(all)")
             currentWallet.createTransactionAllAsync(address, paymentId, mixinCount, priority);
         else
-            currentWallet.createTransactionAsync(address, paymentId, amountxmr, mixinCount, priority);
+            currentWallet.createTransactionAsync(address, paymentId, amountbtr, mixinCount, priority);
     }
 
     //Choose where to save transaction
@@ -1143,18 +1143,18 @@ ApplicationWindow {
                 return;
             }
 
-            var key = currency === "xmreur" ? "XXMRZEUR" : "XXMRZUSD";
+            var key = currency === "btreur" ? "XBTRZEUR" : "XBTRZUSD";
             var ticker = resp.result[key]["o"];
             return ticker;
         } else if(resp._url.startsWith("https://api.coingecko.com/api/v3/")){
-            var key = currency === "xmreur" ? "eur" : "usd";
+            var key = currency === "btreur" ? "eur" : "usd";
             if(!resp.hasOwnProperty("byterub") || !resp["byterub"].hasOwnProperty(key)){
                 appWindow.fiatApiError("Coingecko API has error(s)");
                 return;
             }
             return resp["byterub"][key];
         } else if(resp._url.startsWith("https://min-api.cryptocompare.com/data/")){
-            var key = currency === "xmreur" ? "EUR" : "USD";
+            var key = currency === "btreur" ? "EUR" : "USD";
             if(!resp.hasOwnProperty(key)){
                 appWindow.fiatApiError("cryptocompare API has error(s)");
                 return;
@@ -1201,10 +1201,10 @@ ApplicationWindow {
             return;
         }
 
-        if(persistentSettings.fiatPriceCurrency === "xmrusd")
-            appWindow.fiatPriceXMRUSD = ticker;
-        else if(persistentSettings.fiatPriceCurrency === "xmreur")
-            appWindow.fiatPriceXMREUR = ticker;
+        if(persistentSettings.fiatPriceCurrency === "btrusd")
+            appWindow.fiatPriceBTRUSD = ticker;
+        else if(persistentSettings.fiatPriceCurrency === "btreur")
+            appWindow.fiatPriceBTREUR = ticker;
 
         appWindow.updateBalance();
     }
@@ -1232,9 +1232,9 @@ ApplicationWindow {
 
     function fiatApiCurrencySymbol() {
         switch (persistentSettings.fiatPriceCurrency) {
-            case "xmrusd":
+            case "btrusd":
                 return "USD";
-            case "xmreur":
+            case "btreur":
                 return "EUR";
             default:
                 console.error("unsupported currency", persistentSettings.fiatPriceCurrency);
@@ -1243,7 +1243,7 @@ ApplicationWindow {
     }
 
     function fiatApiConvertToFiat(amount) {
-        var ticker = persistentSettings.fiatPriceCurrency === "xmrusd" ? appWindow.fiatPriceXMRUSD : appWindow.fiatPriceXMREUR;
+        var ticker = persistentSettings.fiatPriceCurrency === "btrusd" ? appWindow.fiatPriceBTRUSD : appWindow.fiatPriceBTREUR;
         if(ticker <= 0){
             console.log(fiatApiError("Invalid ticker value: " + ticker));
             return "?.??";
@@ -1371,7 +1371,7 @@ ApplicationWindow {
         property bool fiatPriceEnabled: false
         property bool fiatPriceToggle: false
         property string fiatPriceProvider: "kraken"
-        property string fiatPriceCurrency: "xmrusd"
+        property string fiatPriceCurrency: "btrusd"
 
         Component.onCompleted: {
             ByteRubComponents.Style.blackTheme = persistentSettings.blackTheme

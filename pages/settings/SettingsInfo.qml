@@ -103,7 +103,7 @@ Rectangle {
             ByteRubComponents.TextBlock {
                 font.pixelSize: 14
                 color: ByteRubComponents.Style.dimmedFontColor
-                text: Version.GUI_MONERO_VERSION + translationManager.emptyString
+                text: Version.GUI_BYTERUB_VERSION + translationManager.emptyString
             }
 
             Rectangle {
@@ -388,7 +388,7 @@ Rectangle {
             onClicked: {
                 var data = "";
                 data += "GUI version: " + Version.GUI_VERSION + " (Qt " + qtRuntimeVersion + ")";
-                data += "\nEmbedded ByteRub version: " + Version.GUI_MONERO_VERSION;
+                data += "\nEmbedded ByteRub version: " + Version.GUI_BYTERUB_VERSION;
                 data += "\nWallet path: ";
 
                 var wallet_path = walletPath();

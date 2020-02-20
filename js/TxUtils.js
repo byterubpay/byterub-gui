@@ -75,12 +75,12 @@ function isValidOpenAliasAddress(address) {
 }
 
 function makeQRCodeString(addr, amount) {
-    var XMR_URI_SCHEME = "byterub:"
-    var XMR_AMOUNT = "tx_amount"
+    var BTR_URI_SCHEME = "byterub:"
+    var BTR_AMOUNT = "tx_amount"
     var qrCodeString =""
-    qrCodeString += (XMR_URI_SCHEME + addr)
+    qrCodeString += (BTR_URI_SCHEME + addr)
     if (amount !== undefined && amount !== ""){
-      qrCodeString += ("?" + XMR_AMOUNT + "=" + amount)
+      qrCodeString += ("?" + BTR_AMOUNT + "=" + amount)
     }
     return qrCodeString
 }

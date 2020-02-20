@@ -78,7 +78,7 @@
 #include "QR-Code-scanner/QrCodeScanner.h"
 #endif
 
-#ifdef MONERO_GUI_STATIC
+#ifdef BYTERUB_GUI_STATIC
 
 #include <QtPlugin>
 #if defined(Q_OS_OSX)
@@ -237,9 +237,9 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(messageHandler);
 
     // loglevel is configured in main.qml. Anything lower than
-    // qWarning is not shown here unless MONERO_LOG_LEVEL env var is set
+    // qWarning is not shown here unless BYTERUB_LOG_LEVEL env var is set
     bool logLevelOk;
-    int logLevel = qEnvironmentVariableIntValue("MONERO_LOG_LEVEL", &logLevelOk);
+    int logLevel = qEnvironmentVariableIntValue("BYTERUB_LOG_LEVEL", &logLevelOk);
     if (logLevelOk && logLevel >= 0 && logLevel <= ByteRub::WalletManagerFactory::LogLevel_Max){
         ByteRub::WalletManagerFactory::setLogLevel(logLevel);
     }
